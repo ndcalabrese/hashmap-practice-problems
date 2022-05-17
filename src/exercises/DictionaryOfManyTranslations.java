@@ -1,5 +1,6 @@
 package exercises;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -26,7 +27,11 @@ public class DictionaryOfManyTranslations {
     }
 
     public ArrayList<String> translate(String word) {
-        return hashmap.get(word);
+        ArrayList<String> translations = new ArrayList<>();
+        if (!(hashmap.get(word) == null)) {
+            translations = hashmap.get(word);
+        }
+        return translations;
     }
 
     public void remove(String word) {
